@@ -1,0 +1,345 @@
+/* style.css - CSS principal
+   -> Customize as cores e fontes nas variáveis abaixo
+*/
+
+:root {
+   --bg: #000000; /* background principal (troque) */
+   --card: #6f8590; /* cor dos cards no layout exemplo */
+   --accent: #2bb6d6; /* cor de destaque */
+   --text: #ffffff;
+   --muted: #ffffff;
+   --primary-btn: #111111;
+   --outline-btn: transparent;
+   --container-width: 1100px;
+   --radius: 28px;
+}
+
+/* reset simples */
+* {
+   box-sizing: border-box;
+}
+html,
+body {
+   height: 100%;
+}
+body {
+   margin: 0;
+   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial;
+   color: var(--text);
+   background: var(--bg);
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   line-height: 1.5;
+}
+
+/* container central */
+.container {
+   width: calc(100% - 40px);
+   max-width: var(--container-width);
+   margin: 0 auto;
+}
+
+/* header */
+.site-header {
+   position: relative;
+   background: transparent;
+}
+.header-inner {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 18px 0;
+}
+.brand img {
+   height: 60px;
+}
+.site-header.small .brand img {
+   height: 48px;
+}
+
+/* nav */
+.nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   gap: 22px;
+   align-items: center;
+}
+.nav a {
+   color: white;
+   text-decoration: none;
+   padding: 8px 10px;
+   border-radius: 6px;
+   opacity: 0.95;
+}
+.nav a:hover,
+.nav a.active {
+   opacity: 1;
+}
+
+/* menu toggle (mobile) */
+.menu-toggle {
+   display: none;
+   background: none;
+   border: 0;
+   cursor: pointer;
+}
+.hamburger {
+   display: block;
+   width: 28px;
+   height: 3px;
+   background: white;
+   position: relative;
+   border-radius: 2px;
+}
+.hamburger::before,
+.hamburger::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   width: 28px;
+   height: 3px;
+   background: white;
+   border-radius: 2px;
+}
+.hamburger::before {
+   top: -8px;
+}
+.hamburger::after {
+   top: 8px;
+}
+
+/* hero */
+.hero {
+   position: relative;
+   height: 360px;
+   display: flex;
+   align-items: center;
+}
+.hero-bg {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: brightness(0.4);
+}
+.hero-overlay {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.35);
+}
+.hero-content {
+   position: relative;
+   color: white;
+   z-index: 2;
+   padding: 36px 0;
+}
+.hero h1 {
+   margin: 0;
+   font-size: 28px;
+   letter-spacing: 0.6px;
+}
+.hero .accent {
+   color: var(--accent);
+   font-weight: 700;
+}
+.lead {
+   margin-top: 8px;
+   color: rgba(255, 255, 255, 0.9);
+   font-size: 18px;
+}
+
+/* intro */
+.intro {
+   display: flex;
+   align-items: flex-start;
+   gap: 40px;
+   padding: 48px 0;
+}
+.intro-text {
+   flex: 1;
+   font-size: 18px;
+   color: var(--text);
+}
+.intro-ctas {
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
+   align-items: center;
+   min-width: 220px;
+}
+.btn {
+   display: inline-block;
+   padding: 14px 28px;
+   border-radius: 999px;
+   text-decoration: none;
+   font-weight: 600;
+}
+.btn-primary {
+   background: var(--primary-btn);
+   color: white;
+}
+.btn-outline {
+   background: transparent;
+   border: 2px solid var(--primary-btn);
+   color: var(--primary-btn);
+}
+
+/* features */
+.features {
+   display: flex;
+   gap: 24px;
+   padding-bottom: 80px;
+}
+.feature {
+   flex: 1;
+   text-align: center;
+}
+.feature-box {
+   background: var(--card);
+   padding: 28px;
+   border-radius: 8px;
+   color: white;
+   min-height: 150px;
+}
+
+/* project cards */
+.project-card-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 24px;
+   margin-top: 24px;
+}
+.project-card {
+   background: white;
+   border-radius: 12px;
+   overflow: hidden;
+   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+.project-card img {
+   width: 100%;
+   height: 180px;
+   object-fit: cover;
+   display: block;
+}
+.project-card h3 {
+   margin: 16px 18px 8px;
+}
+.project-card p {
+   margin: 0 18px 18px;
+   color: var(--muted);
+}
+
+/* contact grid */
+.contact-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 28px;
+   padding: 48px 0;
+}
+.contact-form label {
+   display: block;
+   margin-bottom: 8px;
+   margin-top: 12px;
+}
+.contact-form input,
+.contact-form textarea {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #d0d0d0;
+   border-radius: 6px;
+}
+.contact-info p {
+   margin: 6px 0;
+}
+
+/* footer */
+.site-footer {
+   background: #0b0b0b;
+   color: white;
+   padding: 48px 0;
+   text-align: center;
+   margin-top: 40px;
+}
+.footer-inner p {
+   margin: 0;
+}
+
+/* utilities */
+.values {
+   padding-left: 18px;
+}
+.sr-only {
+   position: absolute !important;
+   left: -9999px;
+   top: auto;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+   .intro {
+      flex-direction: column;
+   }
+   .features {
+      flex-direction: column;
+      gap: 18px;
+   }
+   .project-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   .contact-grid {
+      grid-template-columns: 1fr;
+   }
+   .nav {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 260px;
+      background: rgba(0, 0, 0, 0.9);
+      transform: translateX(110%);
+      transition: transform 0.28s;
+   }
+   .nav.open {
+      transform: translateX(0);
+   }
+   .nav ul {
+      flex-direction: column;
+      padding: 48px 20px;
+   }
+   .menu-toggle {
+      display: block;
+   }
+   .hero {
+      height: 260px;
+   }
+}
+
+/* small screens */
+@media (max-width: 480px) {
+   .project-card-grid {
+      grid-template-columns: 1fr;
+   }
+   .brand img {
+      height: 44px;
+   }
+   .hero h1 {
+      font-size: 20px;
+   }
+   .lead {
+      font-size: 15px;
+   }
+   :root {
+      --container-width: 900px;
+   }
+}

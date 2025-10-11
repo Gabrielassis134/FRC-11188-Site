@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>SAR Dynamics — Contato</title>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="css/style.css" />
+   </head>
+   <body>
+      <header class="site-header small">
+         <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Voltar para Início">
+               <img src="assets/logo FRC 1188.jpg" alt="Logo SAR Dynamics" />
+            </a>
+
+            <button
+               class="menu-toggle"
+               aria-controls="main-nav"
+               aria-expanded="false"
+               aria-label="Abrir menu"
+            >
+               <span class="hamburger"></span>
+            </button>
+
+            <nav id="main-nav" class="nav" role="navigation">
+               <ul>
+                  <li><a href="index.html">Início</a></li>
+                  <li><a href="sobre.html">Sobre Nós</a></li>
+                  <li><a href="projetos.html">Nossos Projetos</a></li>
+                  <li>
+                     <a href="patrocinadores.html">Nossos Patrocinadores</a>
+                  </li>
+                  <li><a href="contato.html" class="active">Contato</a></li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+
+      <main class="container page-content">
+         <h1>Vamos conversar?</h1>
+
+         <p>
+            Quer saber mais sobre a equipe, agendar uma visita ou apoiar nossos
+            projetos? Entre em contato!
+         </p>
+
+         <section class="contact-grid" aria-label="Informações de contato">
+            <div class="contact-info">
+               <p>
+                  <strong>E-mail:</strong>
+                  <a href="mailto:contato@sardynamics.com.br"
+                     >contato@sardynamics.com.br</a
+                  >
+               </p>
+               <p>
+                  <strong>Instagram:</strong>
+                  <a
+                     href="https://instagram.com/sardynamics"
+                     target="_blank"
+                     rel="noopener"
+                     >@sardynamics</a
+                  >
+               </p>
+               <p><strong>LinkedIn:</strong> SAR Dynamics</p>
+               <p>
+                  <strong>Endereço:</strong> Colégio Santo Antônio de Riacho –
+                  [Cidade/UF]
+               </p>
+            </div>
+
+            <form
+               class="contact-form"
+               id="contactForm"
+               action="#"
+               method="post"
+               novalidate
+            >
+               <!-- Sem backend: o envio será tratado por JS (mailto fallback) -->
+               <label for="name">Nome</label>
+               <input id="name" name="name" type="text" required />
+
+               <label for="email">E-mail</label>
+               <input id="email" name="email" type="email" required />
+
+               <label for="message">Mensagem</label>
+               <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+               ></textarea>
+
+               <button class="btn btn-primary" type="submit">
+                  Enviar mensagem
+               </button>
+               <p id="formMessage" class="sr-only" aria-live="polite"></p>
+            </form>
+         </section>
+      </main>
+
+      <footer class="site-footer">
+         <div class="container footer-inner">
+            <p>© 2025 SAR Dynamics – Equipe FRC #11188</p>
+         </div>
+      </footer>
+
+      <script src="js/script.js"></script>
+   </body>
+</html>
