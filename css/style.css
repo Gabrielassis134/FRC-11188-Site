@@ -117,6 +117,7 @@ a {
 }
 .other-page2:hover{
    color: #CF242D !important;
+    font-weight: bold !important
 }
 
 .other-page1 {
@@ -139,6 +140,7 @@ a {
 }
 .other-page1:hover{
    color: #347A9E !important;
+   font-weight: bold !important;
 }
 
 
