@@ -1,11 +1,12 @@
 /* style.css - CSS principal
    -> Customize as cores e fontes nas variáveis abaixo
 */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 :root {
    --bg: #101112; /* background principal (troque) */
    --card: #6f8590; /* cor dos cards no layout exemplo */
-   --accent: #347A9E; /* cor de destaque */
+   --accent: #347A9E;
    --text: #ffffff;
    --muted: #ffffff;
    --primary-btn: #111111;
@@ -63,6 +64,14 @@ body {
    background-color: #000000b6;
 
 }
+.current-page {
+   font-weight: bold;
+   color: #347A9E !important;
+}
+.current-page2 {
+   font-weight: bold;
+   color: #CF242D !important;
+}
 .brand img {
    height: 60px;
 }
@@ -79,13 +88,60 @@ body {
    gap: 22px;
    align-items: center;
 }
-.nav a {
+a {
    color: white;
    text-decoration: none;
    padding: 8px 10px;
    border-radius: 6px;
    opacity: 0.95;
+ 
 }
+
+.other-page2 {
+   position: relative !important;
+   display: inline-block !important;
+   transition: 0.3s ;
+}
+.other-page2::after {
+   content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #CF242D;
+  transition: width 0.3s ease;
+}
+.other-page2:hover::after {
+   width: 100%;
+}
+.other-page2:hover{
+   color: #CF242D !important;
+}
+
+.other-page1 {
+   position: relative !important;
+   display: inline-block !important;
+   transition: 0.3s ;
+}
+.other-page1::after {
+   content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #347A9E;
+  transition: width 0.3s ease;
+}
+.other-page1:hover::after {
+   width: 100%;
+}
+.other-page1:hover{
+   color: #347A9E !important;
+}
+
+
 .nav a:hover,
 .nav a.active {
    opacity: 1;
@@ -159,6 +215,11 @@ body {
    margin-top: 8px;
    color: rgba(255, 255, 255, 0.9);
    font-size: 18px;
+}
+
+.accent2 {
+   color: #CF242D;
+   font-weight: 700;
 }
 
 /* intro */
