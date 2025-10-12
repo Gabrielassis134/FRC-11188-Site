@@ -34,6 +34,16 @@ body {
    line-height: 1.5;
 }
 
+#logo {
+   height: 100px;
+   transition: 0.3s;
+}
+
+#logo:hover {
+   opacity: 0.5;
+   transition: 0.3s;
+}
+
 /* container central */
 .container {
    width: calc(100% - 40px);
@@ -219,6 +229,10 @@ a {
    font-size: 18px;
 }
 
+.accent {
+   color: #347A9E;
+   font-weight: 700;
+}
 .accent2 {
    color: #CF242D;
    font-weight: 700;
