@@ -263,6 +263,14 @@ a {
    border-radius: 999px;
    text-decoration: none;
    font-weight: 600;
+   cursor: pointer;
+   transition: 0.3s;
+   background: #dee0e1;
+
+}
+.btn:hover {
+   transition: 0.3s;
+   background: #347A9E;
 }
 .btn-primary {
    transition: 0.3s;

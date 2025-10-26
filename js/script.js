@@ -33,27 +33,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
          // validação básica
          if (!name || !email || !message) {
-            msgEl.className = "";
-            msgEl.textContent = "Por favor, preencha todos os campos.";
-            msgEl.classList.remove("sr-only");
+            if (msgEl) {
+               msgEl.className = "";
+               msgEl.textContent = "Por favor, preencha todos os campos.";
+               msgEl.classList.remove("sr-only");
+            }
             return;
          }
 
          // cria mailto fallback
          const subject = encodeURIComponent("Contato via site - SAR Dynamics");
-         const body = encodeURIComponent(
-            `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`
-         );
-         const mailto = `mailto:contato@sardynamics.com.br?subject=${subject}&body=${body}`;
+         const body = encodeURIComponent(`Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`);
+         const mailto = `mailto:theus.baptistella@gmail.com?subject=${subject}&body=${body}`;
 
-         // tenta abrir cliente de e-mail
-         window.location.href = mailto;
+         // tenta abrir cliente de e-mail (tenta window.open primeiro)
+         const win = window.open(mailto, "_self");
+         if (!win) {
+            // fallback: atualiza location (pode substituir a página) ou informar usuário
+            window.location.href = mailto;
+         }
 
          // feedback para acessibilidade
-         msgEl.className = "";
-         msgEl.textContent =
-            "Tentando abrir seu cliente de e-mail. Se nada acontecer, envie manualmente para contato@sardynamics.com.br";
-         msgEl.classList.remove("sr-only");
+         if (msgEl) {
+            msgEl.className = "";
+            msgEl.textContent =
+               "Tentando abrir seu cliente de e-mail. Se nada acontecer, envie manualmente para contato@sardynamics.com.br";
+            msgEl.classList.remove("sr-only");
+         }
       });
    }
 });
