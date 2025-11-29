@@ -1,0 +1,96 @@
+/* patrocinadores.css - Estilos específicos da página de patrocinadores - Mobile First */
+
+.sponsors {
+   margin: 32px 0;
+   padding: 0 16px;
+}
+
+.coming-soon {
+   background: var(--bg-card);
+   padding: 40px 24px;
+   border-radius: var(--border-radius-lg);
+   border: 1px solid var(--border-color);
+   text-align: center;
+   box-shadow: var(--shadow-sm);
+}
+
+.coming-soon h2 {
+   font-size: 24px;
+   font-weight: 600;
+   margin-bottom: 16px;
+   color: var(--text-primary);
+}
+
+.coming-soon p {
+   font-size: 16px;
+   color: var(--text-secondary);
+   margin: 0;
+   line-height: 1.6;
+}
+
+.become-sponsor {
+   background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+   padding: 32px 24px;
+   border-radius: var(--border-radius-lg);
+   border: 1px solid var(--border-color);
+   text-align: center;
+   margin-top: 40px;
+   box-shadow: var(--shadow-md);
+}
+
+.become-sponsor p {
+   font-size: 18px;
+   font-weight: 500;
+   color: var(--text-primary);
+   margin-bottom: 20px;
+}
+
+.become-sponsor .btn {
+   min-width: 200px;
+   width: auto;
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+   .sponsors {
+      margin: 40px 0;
+      padding: 0;
+   }
+
+   .coming-soon {
+      padding: 50px 32px;
+   }
+
+   .coming-soon h2 {
+      font-size: 28px;
+   }
+
+   .coming-soon p {
+      font-size: 17px;
+   }
+
+   .become-sponsor {
+      padding: 40px 32px;
+      margin-top: 50px;
+   }
+
+   .become-sponsor p {
+      font-size: 20px;
+   }
+}
+
+/* Desktop (901px+) */
+@media (min-width: 901px) {
+   .coming-soon {
+      padding: 60px 40px;
+   }
+
+   .coming-soon h2 {
+      font-size: 32px;
+   }
+
+   .become-sponsor {
+      padding: 48px 40px;
+      margin-top: 60px;
+   }
+}

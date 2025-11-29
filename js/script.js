@@ -4,21 +4,54 @@ document.addEventListener("DOMContentLoaded", function () {
    // Menu mobile
    const toggle = document.querySelectorAll(".menu-toggle");
    const nav = document.getElementById("main-nav");
+   const body = document.body;
+   
+   // Criar overlay se não existir
+   let overlay = document.querySelector(".menu-overlay");
+   if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.className = "menu-overlay";
+      document.body.appendChild(overlay);
+   }
+
+   function openMenu() {
+      nav.classList.add("open");
+      overlay.classList.add("active");
+      body.classList.add("menu-open");
+      toggle.forEach((btn) => btn.setAttribute("aria-expanded", "true"));
+   }
+
+   function closeMenu() {
+      nav.classList.remove("open");
+      overlay.classList.remove("active");
+      body.classList.remove("menu-open");
+      toggle.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+   }
 
    toggle.forEach((btn) => {
       btn.addEventListener("click", function () {
          const expanded = this.getAttribute("aria-expanded") === "true";
-         this.setAttribute("aria-expanded", String(!expanded));
-         nav.classList.toggle("open");
+         if (expanded) {
+            closeMenu();
+         } else {
+            openMenu();
+         }
       });
    });
 
+   // Fecha menu ao clicar no overlay
+   overlay.addEventListener("click", closeMenu);
+
    // Fecha menu ao clicar em link (UX mobile)
    document.querySelectorAll("#main-nav a").forEach((a) => {
-      a.addEventListener("click", () => {
-         nav.classList.remove("open");
-         toggle.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
-      });
+      a.addEventListener("click", closeMenu);
+   });
+
+   // Fecha menu ao pressionar ESC
+   document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("open")) {
+         closeMenu();
+      }
    });
 
    // Formulário de contato (fallback: mailto) - usado em contato.html

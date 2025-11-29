@@ -1,0 +1,88 @@
+/* sobre.css - Estilos específicos da página sobre nós - Mobile First */
+
+.page-content {
+   max-width: 100%;
+   margin: 0 auto;
+}
+
+.page-content p {
+   font-size: 16px;
+   line-height: 1.8;
+   margin-bottom: 20px;
+   padding: 0 16px;
+}
+
+.page-content em {
+   color: var(--primary-blue-light);
+   font-style: normal;
+   font-weight: 600;
+}
+
+.values {
+   margin-top: 28px;
+   padding: 0 16px;
+}
+
+.values li {
+   padding: 14px 0 14px 28px;
+   font-size: 16px;
+   border-bottom: 1px solid var(--border-color);
+   transition: var(--transition);
+}
+
+.values li:last-child {
+   border-bottom: none;
+}
+
+.values li:hover {
+   padding-left: 36px;
+   color: var(--text-primary);
+}
+
+.values li::before {
+   left: 0;
+   font-size: 18px;
+   transition: var(--transition);
+}
+
+.values li:hover::before {
+   left: 8px;
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+   .page-content {
+      max-width: 900px;
+   }
+
+   .page-content p {
+      font-size: 17px;
+      padding: 0;
+   }
+
+   .values {
+      padding: 0;
+      margin-top: 32px;
+   }
+
+   .values li {
+      padding: 16px 0 16px 32px;
+      font-size: 17px;
+   }
+
+   .values li:hover {
+      padding-left: 40px;
+   }
+
+   .values li::before {
+      font-size: 20px;
+   }
+}
+
+/* Desktop (901px+) */
+@media (min-width: 901px) {
+   .page-content p {
+      font-size: 18px;
+      margin-bottom: 24px;
+   }
+}
